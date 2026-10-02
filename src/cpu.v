@@ -1,4 +1,4 @@
-`timescale 1ns / 1ps
+`timescale 1ns / 1ps 
 `define WORD_SIZE 16
 
 // 16-bit educational CPU
