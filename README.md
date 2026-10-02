@@ -1,13 +1,79 @@
-# 16bit-verilog-cpu-
-컴퓨터 구조개론-verilog를 이용한 16bit cpu 개발
+# 16-bit Verilog CPU
 
-16-bit CPU implemented in Verilog
+A 16-bit educational CPU implemented in Verilog.
 
-Features
+The project contains a CPU core, a standalone 16-operation ALU,
+and a 4-entry register file developed while studying computer
+architecture.
+
+## Architecture
+
+![CPU Architecture](docs/architecture.png)
+
+## Datapath
+
+![CPU Datapath](docs/datapath.png)
+
+## CPU Features
+
 - 16-bit datapath
-- 4-entry register file
-- Arithmetic / logic / shift operations
-- Instruction decoder
+- 4 general-purpose 16-bit registers
 - Program Counter
-- ADD / ADI / LHI / JMP / WWD support
-- Automated testbench
+- Instruction decoding
+- Sign-extended immediate operations
+- Jump control
+- Output port for WWD
+- Instruction counter
+
+## Supported CPU Instructions
+
+| Instruction | Description |
+|---|---|
+| ADD | Register-register addition |
+| ADI | Register-immediate addition |
+| LHI | Load high immediate |
+| JMP | Unconditional jump |
+| WWD | Write register value to output port |
+
+## Standalone ALU Operations
+
+The standalone ALU implements 16 operations:
+
+ADD, SUB, ID, NAND, NOR, XNOR, NOT, AND,
+OR, XOR, LRS, ARS, RR, LLS, ALS, and RL.
+
+## Register File
+
+The standalone register file contains four 16-bit registers.
+
+- Two asynchronous read ports
+- One synchronous write port
+- Synchronous reset
+
+## Project Structure
+
+src/
+- cpu.v
+- ALU.v
+- RF.v
+
+docs/
+- architecture.png
+- datapath.png
+
+tests/
+- Verilog testbenches
+
+## Implementation Note
+
+The standalone ALU and Register File were implemented as individual
+hardware components in an earlier stage of the project.
+
+The final CPU core implements the required register file, arithmetic,
+instruction decoding, and control logic directly inside `cpu.v`.
+
+## Tools
+
+- Verilog HDL
+- Digital logic simulation
+- Git / GitHub
