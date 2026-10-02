@@ -1,0 +1,18 @@
+# Simulation output
+*.vcd
+*.fst
+*.out
+*.log
+
+# Icarus Verilog
+a.out
+simv
+
+# Vivado
+*.jou
+*.wdb
+*.pb
+
+# OS generated files
+.DS_Store
+Thumbs.db
